@@ -22,7 +22,7 @@ export default class App extends Component {
                 </View>
                 <Weeloop
                     ref={this.weeloop}
-                    isCustom={false}
+                    custom={false}
                     appGuid="67540390-b3c1-11e9-a487-43674d54ecce"
                     user={{
                         email: "lucas.delon@yopmail.com",

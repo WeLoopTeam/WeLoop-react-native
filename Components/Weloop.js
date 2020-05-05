@@ -25,7 +25,7 @@ export default class Weloop extends Component {
         super();
         this.webView = React.createRef();
         this.state.isButtonVisible =
-            props.isCustom === false || props.isCustom === undefined;
+            props.custom === false || props.custom === undefined;
     }
 
     componentDidMount() {
