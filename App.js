@@ -24,12 +24,14 @@ export default class App extends Component {
                     ref={this.weeloop}
                     custom={false}
                     appGuid="67540390-b3c1-11e9-a487-43674d54ecce"
+                    /*
                     user={{
                         email: "lucas.delon@yopmail.com",
                         firstname: "lucas",
                         lastname: "delon",
                         key: "wZcD1",
                     }}
+                    */
                 />
             </View>
         );
