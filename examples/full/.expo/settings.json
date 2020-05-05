@@ -3,5 +3,6 @@
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": "tm-bsf"
+  "urlRandomness": "ks-wpv",
+  "https": false
 }
