@@ -29,9 +29,7 @@ export default class Weloop extends Component {
     }
 
     componentDidMount() {
-        fetch(
-            "https://staging-api.30kg-rice.cooking/widget/" + this.props.appGuid
-        )
+        fetch("https://api.weloop.io/widget/" + this.props.appGuid)
             .then((response) => response.json())
             .then((json) => {
                 this.setState({
@@ -132,7 +130,7 @@ export default class Weloop extends Component {
                         ref={this.webView}
                         source={{
                             uri:
-                                "https://staging-widget.30kg-rice.cooking/home?appGuid=" +
+                                "https://widget.weloop.io/home?appGuid=" +
                                 this.props.appGuid,
                         }}
                         javaScriptEnabled
