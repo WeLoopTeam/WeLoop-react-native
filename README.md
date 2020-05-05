@@ -48,10 +48,20 @@ To invoke the Weeloop WebView with a custom Button, you need to add props:
 />
 <Weeloop
   ref={this.weeloop}
-  isCustom={false}
+  custom={false}
   appGuid="YOUR_PROJECT_GUID"
 />
 ```
+
+## Props
+
+### Weloop props
+
+| Props           | type           | description                                                          | required | default |
+| :-------------- | :------------- | :------------------------------------------------------------------- | :------- | :------ |
+| appGuid           | String          | Api Key for weloop webview | required | null
+| custom           | bool          | enable/disable custom invocation | | false
+| user           | Object          | User informations object with email, firstname, lastname and key | | null
 
 ## License
 
