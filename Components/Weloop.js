@@ -83,14 +83,6 @@ export default class Weloop extends Component {
             "|" +
             user.key;
         let token = CryptoJS.AES.encrypt(msg, this.props.appGuid).toString();
-        console.log(
-            "MSG: " +
-                msg +
-                " // KEY: " +
-                this.props.appGuid +
-                " // TOKEN: " +
-                token
-        );
         return token;
     };
 
@@ -113,7 +105,6 @@ export default class Weloop extends Component {
                 this.setState({ isCaptured: false });
                 break;
             case "setNotificationCount":
-                console.log(JSON.parse(event.nativeEvent.data).data.value);
                 if (JSON.parse(event.nativeEvent.data).data.value !== undefined)
                     this.setState({
                         notifNb: JSON.parse(event.nativeEvent.data).data.value,
@@ -148,16 +139,9 @@ export default class Weloop extends Component {
                                 this.state.token != null &&
                                 this.state.token != null
                             ) {
-                                setTimeout(() => {
-                                    console.log(
-                                        this.props.appGuid +
-                                            " " +
-                                            this.state.token
-                                    );
-                                    this.webView.current.injectJavaScript(
-                                        `window.GetCurrentUser({ appGuid: '${this.props.appGuid}', token: '${this.state.token}'});true;`
-                                    );
-                                }, 5000);
+                                this.webView.current.injectJavaScript(
+                                    `window.GetCurrentUser({ appGuid: '${this.props.appGuid}', token: '${this.state.token}'});true;`
+                                );
                             }
                             this.setState({ isLoading: false });
                         }}
