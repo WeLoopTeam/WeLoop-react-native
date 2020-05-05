@@ -87,7 +87,6 @@ export default class Weloop extends Component {
     };
 
     handleOnMessage(event) {
-        console.log(JSON.parse(event.nativeEvent.data).data.name);
         switch (JSON.parse(event.nativeEvent.data).data.name) {
             case "get-screenshot":
                 if (this.state.isCaptured) return;
@@ -111,8 +110,7 @@ export default class Weloop extends Component {
                         notifNb: JSON.parse(event.nativeEvent.data).data.value,
                     });
                 break;
-            case "isLoaded":
-                console.log(this.props.appGuid + " " + this.state.token);
+            case "weloop-device-getCurrentUser":
                 if (this.state.token != null) {
                     this.webView.current.injectJavaScript(
                         `window.GetCurrentUser({ appGuid: '${this.props.appGuid}', token: '${this.state.token}'});true;`
