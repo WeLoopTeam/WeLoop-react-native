@@ -87,6 +87,7 @@ export default class Weloop extends Component {
     };
 
     handleOnMessage(event) {
+        console.log(JSON.parse(event.nativeEvent.data).data.name);
         switch (JSON.parse(event.nativeEvent.data).data.name) {
             case "get-screenshot":
                 if (this.state.isCaptured) return;
@@ -109,6 +110,14 @@ export default class Weloop extends Component {
                     this.setState({
                         notifNb: JSON.parse(event.nativeEvent.data).data.value,
                     });
+                break;
+            case "isLoaded":
+                console.log(this.props.appGuid + " " + this.state.token);
+                if (this.state.token != null) {
+                    this.webView.current.injectJavaScript(
+                        `window.GetCurrentUser({ appGuid: '${this.props.appGuid}', token: '${this.state.token}'});true;`
+                    );
+                }
                 break;
             default:
                 break;
@@ -135,14 +144,6 @@ export default class Weloop extends Component {
                             this.setState({ isLoading: true });
                         }}
                         onLoadEnd={() => {
-                            if (
-                                this.state.token != null &&
-                                this.state.token != null
-                            ) {
-                                this.webView.current.injectJavaScript(
-                                    `window.GetCurrentUser({ appGuid: '${this.props.appGuid}', token: '${this.state.token}'});true;`
-                                );
-                            }
                             this.setState({ isLoading: false });
                         }}
                         injectedJavaScript={`
@@ -189,7 +190,7 @@ export default class Weloop extends Component {
                             <SvgRenderer
                                 width="25"
                                 height="25"
-                                source={require("./../assets/images/logo.svg")}
+                                source={require("./assets/images/logo.svg")}
                             />
                         )}
                         {this.state.notifNb !== "?" &&

@@ -1,0 +1,21 @@
+{
+    "expo": {
+        "name": "WeloopAppTest",
+        "slug": "WeloopAppTest",
+        "platforms": ["ios", "android", "web"],
+        "version": "1.0.0",
+        "privacy": "public",
+        "orientation": "portrait",
+        "splash": {
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": ["**/*"],
+        "ios": {
+            "supportsTablet": true
+        }
+    }
+}

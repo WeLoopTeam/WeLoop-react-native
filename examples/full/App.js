@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-import Weeloop from "./Components/Weloop";
+import Weeloop from "react-native-weloop";
 
 export default class App extends Component {
     constructor(props) {
@@ -24,14 +24,12 @@ export default class App extends Component {
                     ref={this.weeloop}
                     custom={false}
                     appGuid="67540390-b3c1-11e9-a487-43674d54ecce"
-                    /*
                     user={{
                         email: "lucas.delon@yopmail.com",
                         firstname: "lucas",
                         lastname: "delon",
                         key: "wZcD1",
                     }}
-                    */
                 />
             </View>
         );
