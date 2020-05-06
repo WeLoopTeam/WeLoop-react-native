@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-import Weeloop from "react-native-weloop";
+import Weloop from "react-native-weloop";
 
 export default class App extends Component {
     constructor(props) {
         super();
-        this.weeloop = React.createRef();
+        this.weloop = React.createRef();
     }
 
     render() {
@@ -16,12 +16,12 @@ export default class App extends Component {
                     <Button
                         title="WebView"
                         onPress={() => {
-                            this.weeloop.current.invoke();
+                            this.weloop.current.invoke();
                         }}
                     />
                 </View>
-                <Weeloop
-                    ref={this.weeloop}
+                <Weloop
+                    ref={this.weloop}
                     custom={true}
                     appGuid="e13f3070-69c5-11ea-9a63-811eefcd2144"
                     user={{
