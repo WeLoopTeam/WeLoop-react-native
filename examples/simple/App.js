@@ -9,7 +9,7 @@ export default class App extends Component {
                 <View style={styles.container}>
                     <Text>Une application parfaite pour weloop !</Text>
                 </View>
-                <Weeloop appGuid="67540390-b3c1-11e9-a487-43674d54ecce" />
+                <Weeloop appGuid="e13f3070-69c5-11ea-9a63-811eefcd2144" />
             </View>
         );
     }

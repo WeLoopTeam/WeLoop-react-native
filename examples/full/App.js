@@ -23,9 +23,9 @@ export default class App extends Component {
                 <Weeloop
                     ref={this.weeloop}
                     custom={true}
-                    appGuid="67540390-b3c1-11e9-a487-43674d54ecce"
+                    appGuid="e13f3070-69c5-11ea-9a63-811eefcd2144"
                     user={{
-                        email: "lucas.delon@yopmail.com",
+                        email: "delon@yopmail.com",
                         firstname: "lucas",
                         lastname: "delon",
                         key: "wZcD1",
