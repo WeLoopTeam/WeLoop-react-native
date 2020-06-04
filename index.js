@@ -51,7 +51,6 @@ export default class Weloop extends Component {
         this.setState({ isLoading: true }, () => {
             captureScreen({
                 result: "base64",
-                quality: 1,
             }).then(
                 (base64Img) => {
                     this.setState(
@@ -124,7 +123,10 @@ export default class Weloop extends Component {
         if (this.state.isWebView) {
             return (
                 <View
-                    style={{ ...styles.root, paddingTop: getStatusBarHeight() }}
+                    style={{
+                        ...styles.webView,
+                        paddingTop: getStatusBarHeight(),
+                    }}
                 >
                     <WebView
                         ref={this.webView}
@@ -206,6 +208,11 @@ export default class Weloop extends Component {
 
 const styles = StyleSheet.create({
     root: {
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+    },
+    webView: {
         position: "absolute",
         width: "100%",
         height: "100%",
